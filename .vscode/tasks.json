@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "configure: debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", ".",
+        "-B", "build/debug",
+        "-G", "Ninja",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_C_COMPILER=clang",
+        "-DCMAKE_CXX_COMPILER=clang++"
+      ]
+    },
+    {
+      "label": "build: debug",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "build/debug"
+      ],
+      "dependsOn": ["configure: debug"]
+    },
+
+    {
+      "label": "configure: release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", ".",
+        "-B", "build/release",
+        "-G", "Ninja",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ]
+    },
+    {
+      "label": "build: release",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build", "build/release"
+      ],
+      "dependsOn": ["configure: release"]
+    }
+  ]
+}

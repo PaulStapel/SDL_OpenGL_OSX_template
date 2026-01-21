@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Game (Debug)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/debug/game",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build: debug",
+      "args": []
+    },
+    {
+      "name": "Game (Release)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/release/game",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "build: release"
+    }
+  ]
+}
